@@ -20,10 +20,10 @@ SET CP=%PWD%\unix_domain_socket.jar
 call %PWD%\..\data\setup_%LOCALE%.bat
 
 %JAVA_BIN%\java -cp %CP% Server %TEST_STRING% &
-timeout /nobreak 3 > /nul
+timeout /nobreak 3 > nul
 
 %JAVA_BIN%\java -cp %CP% Client %TEST_STRING% "%TEST_STRINGS%" &
-timeout /nobreak 3 > /nul
+timeout /nobreak 3 > nul
 
 fc output expected_result > fc.out 2>&1
 exit %errorlevel%
